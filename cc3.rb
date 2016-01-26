@@ -51,7 +51,7 @@ puts numbers.inject(:*)
 #### Exercise 3
 # Array to Hash, without clobbering! (i.e. no duplicates)
 
-animals_again = [["dogs", 4], ["cats", 3], ["dogs", 7]]
+# animals_again = [["dogs", 4], ["cats", 3], ["dogs", 7]]
 
 # Method 1
 
@@ -75,12 +75,13 @@ animals_again = [["dogs", 4], ["cats", 3], ["dogs", 7]]
 # Method 2
 
 animals_hash = {}
-
+animals_again = [["dogs", 4], ["cats", 3], ["dogs", 7]]
 animals_again.each do |animal_name, animal_count|
-  if animals_hash.has_key?(animal_name)
+  # if animals_hash.has_key?(animal_name)
+  if animals_hash[animal_name]
     animals_hash[animal_name] += animal_count
   else
-    animals_hash[animal_name] = animal_name
+    animals_hash[animal_name] = animal_count
   end
 end
 
